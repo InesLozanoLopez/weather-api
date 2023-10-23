@@ -1,18 +1,23 @@
 import { weatherContext } from "@/context";
 import { useContext } from "react";
-import { IWeatherData } from '@/interfaces'
+import { IWeatherDay } from '@/interfaces'
 import FutureDay from '@/components/futureDay'
 
 export default function WeatherFuture() {
     const weatherContextData = useContext(weatherContext);
     const weatherData = weatherContextData.weatherData;
 
+    if(!weatherData){
+        return null
+    }
+    const weatherForecast = weatherData.forecast.forecastday;
+
     return (
         <>
             {weatherData && (
                 <div className="todayContentBox">
-                    {weatherData.map((weatherDay: IWeatherData) => (
-                        <li key={weatherDay.location.localtime}>
+                    {weatherForecast.map((weatherDay: IWeatherDay) => (
+                        <li key={weatherDay.date}>
                             <FutureDay weatherDay={weatherDay} />
                         </li>
                     ))}

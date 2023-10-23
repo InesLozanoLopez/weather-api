@@ -9,7 +9,7 @@ import { weatherContext } from '@/context';
 
 
 export default function SearchBar (){
-    const { updateWeatherData } = useContext(weatherContext)
+    const { updateWeatherData } = useContext(weatherContext);
 
     const formik = useFormik({
         initialValues: {

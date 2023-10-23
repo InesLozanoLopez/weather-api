@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images:{
-        domains:['https://assets.weatherstack.com']
+        domains:['https://cdn.weatherapi.com']
     },
 }
 

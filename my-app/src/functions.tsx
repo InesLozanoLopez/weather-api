@@ -1,4 +1,5 @@
 export function formatDate(data: string): string {
+  if(!data){return '';}
     const timeSplit = data.split(' ');
     const dateSplit = timeSplit[0].split('-');
     const day = parseInt(dateSplit[2]);
@@ -30,7 +31,7 @@ export function formatDate(data: string): string {
       'Nov',
       'Dec',
     ];
-    return dayLetter(day) + monthLetter[month];
+    return `${dayLetter(day)} ${monthLetter[month]}`;
   }
 
 export function celciusToFahrenheit(celcius: number): number {
