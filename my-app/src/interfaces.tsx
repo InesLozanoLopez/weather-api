@@ -7,18 +7,20 @@ export interface IWeatherData {
     location: {
         name: string,
         country: string,
-        localtime: string,
     },
-    current: {
-        precip: number,
-        temperature: number,
-        weather_icons: [
-            string
-        ],
-        weather_descriptions: [
-            string
-        ],
-        wind_speed: number,
-        humidity: number,
-    },
+    forecast: {
+        forecastday: {
+            date: string,
+            day: {
+                avghumidity: number,
+                avgtemp_c: number,
+                avgvis_miles: number,
+                daily_chance_of_rain: number
+            },
+            condition: {
+                text: string,
+                icon: string,
+            }
+        },
+    }
 }

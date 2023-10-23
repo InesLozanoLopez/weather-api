@@ -19,13 +19,12 @@ export default function SearchBar (){
             city: Yup.string().required('Insert the city you would like to get the forecast from'),
         }),
         onSubmit: async (values: IFormValues) => {
-            const today = new Date();
-            const data = await fetchWeather({city: values.city, today});
+            const data = await fetchWeather(values.city);
             updateWeatherData(data);
         }
     })
     return(
-        <form>
+        <form onSubmit={formik.handleSubmit} >
             <input
             type="text"
             aria-label="Inser the city to get the forecast from"

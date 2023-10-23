@@ -1,9 +1,18 @@
 import { IWeatherData } from '@/interfaces'
-import { formatDate } from "@/functions";
+import { formatDate, celciusToFahrenheit } from "@/functions";
 import Image from "next/image";
+import { weatherContext } from '@/context';
+import {useContext} from 'react';
 
 export default function FutureDay({weatherDay}: {weatherDay: IWeatherData}) {
-    const date = formatDate(weatherDay.location.localtime)
+    const date = formatDate(weatherDay.forecast.forecastday.date);
+    
+    const tempCelsius  = useContext(weatherContext);
+
+
+    const temperature = tempCelsius ? weatherDay.forecast.forecastday.day.avgtemp_c : celciusToFahrenheit(weatherDay.forecast.forecastday.day.avgtemp_c);
+
+
 
     return (
         <>
@@ -15,8 +24,8 @@ export default function FutureDay({weatherDay}: {weatherDay: IWeatherData}) {
                 <div className="ImgContent">
                     <Image
                         className="weatherIcon"
-                        src={weatherDay.current.weather_icons[0]}
-                        aria-label={`${weatherDay.current.weather_descriptions} icon`}
+                        src={weatherDay.forecast.forecastday.condition.icon}
+                        aria-label={`${weatherDay.forecast.forecastday.condition.text} icon`}
                         alt="Weather icon"
                         width={150}
                         height={150}
@@ -24,7 +33,7 @@ export default function FutureDay({weatherDay}: {weatherDay: IWeatherData}) {
                     />
 
                     <div className="weatherTemp">
-                        {weatherDay.current.temperature}
+                         `Temperature: ${temperature}`
                     </div>
                     )
                 </div>

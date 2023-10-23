@@ -1,21 +1,21 @@
 import axios from 'axios';
 
-export const fetchWeather = async ({ city, today }: { city: string, today: Date }) => {
-  const endDay = today.setDate(today.getDate() + 4);
-  const baseUrl = 'https://api.weatherstack.com/historical';
-  const myAccessKey = '4ab0647e6a4809d3e8cbc6d208c56a89';
+export const fetchWeather = async (city: string ) => {
+  const baseUrl = 'http://api.weatherapi.com/v1';
+  const myAccessKey = 'b8159c97c59d43d08eb203618232310';
+  console.log(baseUrl);
 
     try {
-        const response = await axios.get(baseUrl,
+        const response = await axios.get(baseUrl + '/forecast.json',
             {
                 params: {
-                    access_key: myAccessKey,
-                    query: city,
-                    historical_date_start: today.toString().slice(0, 10),
-                    historical_date_end: endDay.toString().slice(0, 10),
+                    key: myAccessKey,
+                    q: city,
+                    days : 5,
                 }
             });
         if (response.data) {
+            console.log('response', response.data)
             return response.data;
         }
     } catch (e) {

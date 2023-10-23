@@ -11,7 +11,7 @@ export default function WeatherToday() {
 
 
     const weatherToday = weatherData[0]
-    const date = formatDate(weatherToday.location.localtime)
+    const date = formatDate(weatherToday.forecast.forecastday.date)
 
 
     const handleOnClick = () => {
@@ -19,8 +19,8 @@ export default function WeatherToday() {
     }
 
     const temperature = tempCelsius ?
-        weatherToday.current.temperature :
-        celciusToFahrenheit(weatherToday.current.temperature);
+        weatherToday.forecast.forecastday.day.avgtemp_c :
+        celciusToFahrenheit(weatherToday.forecast.forecastday.day.avgtemp_c);
 
 
 
@@ -35,8 +35,8 @@ export default function WeatherToday() {
                 <div className="gridContent">
                     <Image
                         className="weatherIcon"
-                        src={weatherToday.current.weather_icons[0]}
-                        aria-label={`${weatherToday.current.weather_descriptions} icon`}
+                        src={weatherToday.forecast.forecastday.condition.icon}
+                        aria-label={`${weatherToday.forecast.forecastday.condition.text} icon`}
                         alt="Weather icon"
                         width={150}
                         height={150}
@@ -52,13 +52,13 @@ export default function WeatherToday() {
                     </div>
 
                     <div className="weatherInfo">
-                        `Precipitation: ${weatherToday.current.precip}`
-                        `Wind Speed: ${weatherToday.current.wind_speed}``
-                        `Humidity: ${weatherToday.current.humidity}``
+                        `Precipitation: ${weatherToday.forecast.forecastday.day.daily_chance_of_rain}%`
+                        `Wind Speed: ${weatherToday.forecast.forecastday.day.avgvis_miles}mph/h`
+                        `Humidity: ${weatherToday.forecast.forecastday.day.avghumidity}%`
                     </div>
                     <div className="timeAndDescription">
                         {date}
-                        {weatherToday.current.weather_descriptions}
+                        {weatherToday.forecast.forecastday.condition.text}
                     </div>
                     )
                 </div>

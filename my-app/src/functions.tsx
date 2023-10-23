@@ -1,5 +1,6 @@
 export function formatDate(data: string): string {
-    const dateSplit = data.split('-');
+    const timeSplit = data.split(' ');
+    const dateSplit = timeSplit[0].split('-');
     const day = parseInt(dateSplit[2]);
     const month = parseInt(dateSplit[1]);
   
