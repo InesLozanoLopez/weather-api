@@ -1,12 +1,14 @@
 import { weatherContext } from "@/context";
 import { useContext } from "react";
 import Image from "next/image";
+import { formatDate } from "@/functions";
 
 export default function WeatherToday() {
     const weatherContextData = useContext(weatherContext);
     const weatherData = weatherContextData.weatherData;
 
     const weatherToday = weatherData[0]
+    const date = formatDate(weatherToday.location.localtime)
 
     return (
         <>
@@ -36,8 +38,7 @@ export default function WeatherToday() {
                         {weatherToday.current.humidity}
                     </div>
                     <div className="timeAndDescription">
-
-                        {weatherToday.current.observation_time}
+                        {date}
                         {weatherToday.current.weather_descriptions}
                     </div>
                     )

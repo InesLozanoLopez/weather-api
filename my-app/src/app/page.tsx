@@ -4,7 +4,7 @@ import '@/globals.css';
 import SearchBar from './../components/searchBar';
 import {useContext} from 'react';
 import WeatherContext, { weatherContext } from '@/context';
-import WeatherFutureDay from '@/components/weatherFutureDay';
+import WeatherFuture from '@/components/WeatherFuture';
 import WeatherToday from '@/components/weatherToday';
 
 export default function HomePage() {
@@ -17,7 +17,7 @@ export default function HomePage() {
             {weatherData && (
                 <>
             <WeatherToday/>
-            <WeatherFutureDay/>
+            <WeatherFuture/>
             </>
             )}
         </WeatherContext>

@@ -7,9 +7,10 @@ export interface IWeatherData {
     location: {
         name: string,
         country: string,
+        localtime: string,
     },
     current: {
-        observation_time: string,
+        precip: number,
         temperature: number,
         weather_icons: [
             string
@@ -19,6 +20,5 @@ export interface IWeatherData {
         ],
         wind_speed: number,
         humidity: number,
-        feelslike: number,
     },
 }
