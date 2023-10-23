@@ -31,3 +31,8 @@ export function formatDate(data: string): string {
     ];
     return dayLetter(day) + monthLetter[month];
   }
+
+export function celciusToFahrenheit(celcius: number): number {
+    const fahrenheit = (celcius * 9/5) + 32;
+    return fahrenheit;
+}

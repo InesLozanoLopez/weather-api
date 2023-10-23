@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchWeather = async ({ city, today }: { city: string, today: Date }) => {
-  const endDay = today.setDate(today.getDate() + 14);
+  const endDay = today.setDate(today.getDate() + 4);
   const baseUrl = 'https://api.weatherstack.com/historical';
   const myAccessKey = '4ab0647e6a4809d3e8cbc6d208c56a89';
 

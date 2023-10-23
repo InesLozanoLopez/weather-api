@@ -1,21 +1,36 @@
 import { weatherContext } from "@/context";
 import { useContext } from "react";
 import Image from "next/image";
-import { formatDate } from "@/functions";
+import { formatDate, celciusToFahrenheit } from "@/functions";
 
 export default function WeatherToday() {
     const weatherContextData = useContext(weatherContext);
     const weatherData = weatherContextData.weatherData;
 
+    const { tempCelsius, temperatureUnits } = useContext(weatherContext);
+
+
     const weatherToday = weatherData[0]
     const date = formatDate(weatherToday.location.localtime)
+
+
+    const handleOnClick = () => {
+        temperatureUnits(tempCelsius)
+    }
+
+    const temperature = tempCelsius ?
+        weatherToday.current.temperature :
+        celciusToFahrenheit(weatherToday.current.temperature);
+
+
+
 
     return (
         <>
             (weatherToday && (
             <div className="todayContentBox">
                 <div className='locationInfo'>
-                    {weatherToday.location.name}, {weatherToday.location.country}
+                    {`Results for: ${weatherToday.location.name}, ${weatherToday.location.country}`}
                 </div>
                 <div className="gridContent">
                     <Image
@@ -29,13 +44,17 @@ export default function WeatherToday() {
                     />
 
                     <div className="weatherTemp">
-                        {weatherToday.current.temperature}
+                        `Temperature: ${temperature}`
+                        <button
+                            onClick={handleOnClick}>
+                            {tempCelsius ? "F" : "C"}
+                        </button>
                     </div>
 
                     <div className="weatherInfo">
-                        {weatherToday.current.precip}
-                        {weatherToday.current.wind_speed}
-                        {weatherToday.current.humidity}
+                        `Precipitation: ${weatherToday.current.precip}`
+                        `Wind Speed: ${weatherToday.current.wind_speed}``
+                        `Humidity: ${weatherToday.current.humidity}``
                     </div>
                     <div className="timeAndDescription">
                         {date}
@@ -47,3 +66,4 @@ export default function WeatherToday() {
         </>
     )
 };
+
