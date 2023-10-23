@@ -6,7 +6,7 @@ export const weatherContext = createContext<{weatherData: IWeatherData[] | null,
     updateWeatherData: () => {}
 });
 
-export function WeatherProvider({ children }: {children : ReactNode}){
+export default function WeatherContext({ children }: {children : ReactNode}){
     const [weatherData, setWeatherData] = useState<IWeatherData[] | null>(null);
 
     const updateWeatherData = (data: IWeatherData[]) => {
