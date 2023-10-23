@@ -11,7 +11,7 @@ export const fetchWeather = async ({ city, today }: { city: string, today: Date 
                 params: {
                     access_key: myAccessKey,
                     query: city,
-                    historical_date_start: today,
+                    historical_date_start: today.toString().slice(0, 10),
                     historical_date_end: endDay.toString().slice(0, 10),
                 }
             });

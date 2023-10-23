@@ -1,13 +1,13 @@
 import { ReactNode, createContext, useState } from "react";
 import { IWeatherData } from "./interfaces";
 
-export const weatherContext = createContext<{weatherData: IWeatherData[] | null, updateWeatherData :(data: IWeatherData[]) => void}>({
-    weatherData: null,
+export const weatherContext = createContext<{weatherData: IWeatherData[], updateWeatherData :(data: IWeatherData[]) => void}>({
+    weatherData: [],
     updateWeatherData: () => {}
 });
 
 export default function WeatherContext({ children }: {children : ReactNode}){
-    const [weatherData, setWeatherData] = useState<IWeatherData[] | null>(null);
+    const [weatherData, setWeatherData] = useState<IWeatherData[]>([]);
 
     const updateWeatherData = (data: IWeatherData[]) => {
         setWeatherData(data)
