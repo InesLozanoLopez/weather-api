@@ -26,14 +26,15 @@ describe('WeatherToday component', () => {
       </weatherContextProvider.Provider>
       );
   
-      const toggleButton = screen.getByText('Farenheign');
+      const toggleButton = screen.getByText('Fahrenheit');
       act(() => {
       fireEvent.click(toggleButton);}
       )
-  
+
+      expect(screen.findAllByDisplayValue(/68 ºF/));
       expect(mockContextProvider.temperatureUnits).toHaveBeenCalledWith(true);
   
-      const temperatureElement = await screen.getByRole('button', {name: 'Farenheign'});
+      const temperatureElement = await screen.getByRole('button', {name: 'Fahrenheit'});
       expect(temperatureElement).toBeDefined();
     });
 });

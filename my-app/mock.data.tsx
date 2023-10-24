@@ -24,6 +24,18 @@ const contextValue = {
     },
   };
 
+  const mockWeatherDay = {
+    date: '2023-10-25',
+    day: {
+      avgtemp_c: 20,
+      condition: {
+        icon: 'http://cdn.weatherapi.com/weather/64x64/night/113.png',
+        text: 'Sunny',
+      },
+    },
+  };
+  
+
   const mockContextProvider = {
     weatherData: contextValue.weatherData,
     tempCelsius: true, 
@@ -31,4 +43,4 @@ const contextValue = {
     updateWeatherData: jest.fn(),
   };
 
-  export { mockContextProvider}
+  export { mockContextProvider, mockWeatherDay}

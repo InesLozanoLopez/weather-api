@@ -37,7 +37,7 @@ export default function WeatherToday() {
               onClick={handleOnClick}
               className={tempCelsius ? 'tempUnitsToggle lightColor' : 'tempUnitsToggle'}
             >
-              Farenheign
+              Fahrenheit
             </button>
             <span className="verticalLine tempUnitsToggle"></span>
             <button
