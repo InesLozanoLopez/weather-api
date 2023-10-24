@@ -2,10 +2,10 @@
 
 import './globals.css';
 import SearchBar from './../components/searchBar';
-import WeatherContext from '@/context';
-import WeatherFuture from '@/components/weatherFuture';
-import WeatherToday from '@/components/weatherToday';
-import ToastProvider from '@/toastProvider';
+import WeatherContext from './../context';
+import WeatherFuture from './../components/weatherFuture';
+import WeatherToday from './../components/weatherToday';
+import ToastProvider from './../toastProvider';
 
 
 

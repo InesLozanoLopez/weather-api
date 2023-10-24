@@ -1,9 +1,9 @@
 import './styles/weatherTodayStyle.css'
-import { weatherContextProvider } from '@/context';
+import { weatherContextProvider } from './../context';
 import { useContext } from 'react';
 import Image from 'next/image';
-import { formatDate } from '@/functions/dateFormatFunctions.tsx';
-import { temperatureToggle } from '@/functions/temperatureFunctions';
+import { formatDate } from './../functions/dateFormatFunctions.tsx';
+import { temperatureToggle } from './../functions/temperatureFunctions';
 
 export default function WeatherToday() {
   const weatherData = useContext(weatherContextProvider).weatherData;
@@ -68,7 +68,7 @@ export default function WeatherToday() {
             <div className='weatherInfo'>
               <div className="weatherDetails">
                 <div>Precipitation: {weatherToday.day.daily_chance_of_rain}%</div>
-                <div>Wind Speed: {weatherToday.day.avgvis_miles}mph/h</div>
+                <div>Wind Speed: {weatherToday.day.avgvis_miles}mph</div>
                 <div>Humidity: {weatherToday.day.avghumidity}%</div>
               </div>
               <div className="timeAndDescription">
