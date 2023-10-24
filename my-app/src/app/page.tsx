@@ -5,7 +5,7 @@ import SearchBar from './../components/searchBar';
 import WeatherContext from '@/context';
 import WeatherFuture from '@/components/weatherFuture';
 import WeatherToday from '@/components/weatherToday';
-import ToastProvider from '@/toastContainer';
+import ToastProvider from '@/toastProvider';
 
 
 

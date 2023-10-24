@@ -6,7 +6,7 @@ import { fetchWeather } from './../apiServices';
 import { IFormValues } from './../interfaces';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { weatherContextProvider } from '@/context';
+import { weatherContextProvider } from './../context';
 import { toast } from 'react-toastify';
 
 export default function SearchBar() {
