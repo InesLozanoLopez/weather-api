@@ -20,9 +20,9 @@ export default function WeatherFuture() {
             {weatherData && (
                 <div className="todayContentBox">
                     {weatherForecast.map((weatherDay: IWeatherDay) => (
-                        <li key={weatherDay.date}>
+                        <div key={weatherDay.date}>
                             <FutureDay weatherDay={weatherDay} />
-                        </li>
+                        </div>
                     ))}
                 </div>
             )}

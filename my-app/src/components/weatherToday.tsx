@@ -56,16 +56,16 @@ export default function WeatherToday() {
                         priority={true}
                     />
                     <div className="weatherTemp">
-                        Temperature: ${temperature} ${tempCelsius ? "F" : "C"}
+                        Temperature: {temperature} {tempCelsius ? "F" : "C"}
                     </div>
 
                     <span className='verticalLine'></span>
 
 
                     <div className="weatherInfo">
-                        <div>Precipitation: ${weatherToday.day.daily_chance_of_rain}%</div>
-                        <div>Wind Speed: ${weatherToday.day.avgvis_miles}mph/h</div>
-                        <div>Humidity: ${weatherToday.day.avghumidity}%</div>
+                        <div>Precipitation: {weatherToday.day.daily_chance_of_rain}%</div>
+                        <div>Wind Speed: {weatherToday.day.avgvis_miles}mph/h</div>
+                        <div>Humidity: {weatherToday.day.avghumidity}%</div>
                     </div>
                     <div className="timeAndDescription">
                         <div>{date}</div>

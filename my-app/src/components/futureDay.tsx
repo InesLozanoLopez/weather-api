@@ -34,7 +34,7 @@ export default function FutureDay({weatherDay}: {weatherDay: IWeatherDay}) {
                     />
 
                     <div className="weatherTemp">
-                         `Temperature: ${temperature} $ {tempCelsius ? "F" : "C"}`
+                         `Temperature: {temperature} {tempCelsius ? "F" : "C"}`
                     </div>
                 </div>
             </div>
