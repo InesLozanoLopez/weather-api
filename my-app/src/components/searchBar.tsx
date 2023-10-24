@@ -16,20 +16,21 @@ export default function SearchBar() {
     },
     validationSchema: Yup.object({
       city: Yup.string().required(
-        'Insert the city you would like to get the forecast from',
+        'Please the city you would like to get the forecast from',
       ),
     }),
     onSubmit: async (values: IFormValues) => {
       const data = await fetchWeather(values.city);
-      updateWeatherData(data);
-    },
+      updateWeatherData(data);}
   });
+
   return (
     <form onSubmit={formik.handleSubmit}>
       <input
         type="text"
         aria-label="Inser the city to get the forecast from"
         id="city"
+        pattern="[A-Za-z]+"
         placeholder="City..."
         value={formik.values.city}
         onChange={formik.handleChange}
