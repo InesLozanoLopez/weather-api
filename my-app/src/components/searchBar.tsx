@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 export default function SearchBar() {
   const { updateWeatherData } = useContext(weatherContextProvider);
-  const pattern=/^[A-Za-z]+$/
+  const pattern = /^[A-Za-z]+$/
 
 
 
@@ -24,11 +24,14 @@ export default function SearchBar() {
       ),
     }),
     onSubmit: async (values: IFormValues) => {
-      if(!pattern.test(values.city)){
+      if (!pattern.test(values.city)) {
         toast.warning('Only letters allowed')
       } else {
-      const data = await fetchWeather(values.city);
-      updateWeatherData(data);}
+        const loadingToastMessage = toast.info('Loading forecast...');
+        const data = await fetchWeather(values.city);
+        updateWeatherData(data);
+        toast.dismiss(loadingToastMessage);
+      }
     }
   });
 
