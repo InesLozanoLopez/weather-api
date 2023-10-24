@@ -5,12 +5,17 @@ import SearchBar from './../components/searchBar';
 import WeatherContext from '@/context';
 import WeatherFuture from '@/components/weatherFuture';
 import WeatherToday from '@/components/weatherToday';
+import ToastProvider from '@/toastContainer';
+
+
 
 export default function HomePage() {
   return (
     <>
       <WeatherContext>
-        <SearchBar />
+        <ToastProvider>
+          <SearchBar />
+        </ToastProvider>
         <WeatherToday />
         <WeatherFuture />
       </WeatherContext>

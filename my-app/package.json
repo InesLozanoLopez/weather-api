@@ -10,6 +10,7 @@
     "format": "prettier --write \"**/*.tsx\" \"**/*.tsx\" \"**/*.css\" \"**/*.js\""
   },
   "dependencies": {
+    "@types/react-toastify": "^4.1.0",
     "axios": "^1.5.1",
     "formik": "^2.4.5",
     "next": "13.5.6",

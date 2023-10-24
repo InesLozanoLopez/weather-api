@@ -1,12 +1,12 @@
-import { weatherContext } from '@/context';
+import { weatherContextProvider } from '@/context';
 import { useContext } from 'react';
 import Image from 'next/image';
 import { formatDayOfWeek } from '@/functions/dateFormatFunctions.tsx';
 import { temperatureToggle } from '@/functions/temperatureFunctions';
 
 export default function WeatherToday() {
-  const weatherData = useContext(weatherContext).weatherData;
-  const { tempCelsius, temperatureUnits } = useContext(weatherContext);
+  const weatherData = useContext(weatherContextProvider).weatherData;
+  const { tempCelsius, temperatureUnits } = useContext(weatherContextProvider);
 
   if (!weatherData) {
     return null;

@@ -1,7 +1,7 @@
-import { ReactNode, createContext, useEffect, useState } from 'react';
+import { ReactNode, createContext, useState } from 'react';
 import { IWeatherData } from './interfaces';
 
-export const weatherContext = createContext<{
+export const weatherContextProvider = createContext<{
   weatherData?: IWeatherData;
   tempCelsius: boolean;
   temperatureUnits: (tempCelsius: boolean) => void;
@@ -26,10 +26,10 @@ export default function WeatherContext({ children }: { children: ReactNode }) {
   };
 
   return (
-    <weatherContext.Provider
+    <weatherContextProvider.Provider
       value={{ weatherData, updateWeatherData, temperatureUnits, tempCelsius }}
     >
       {children}
-    </weatherContext.Provider>
+    </weatherContextProvider.Provider>
   );
 }

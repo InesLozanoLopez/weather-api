@@ -3,13 +3,13 @@ import { formatDayOfWeek } from '@/functions/dateFormatFunctions.tsx';
 import { temperatureToggle } from '@/functions/temperatureFunctions';
 
 import Image from 'next/image';
-import { weatherContext } from '@/context';
+import { weatherContextProvider } from '@/context';
 import { useContext } from 'react';
 
 export default function FutureDay({ weatherDay }: { weatherDay: IWeatherDay }) {
   const date = formatDayOfWeek(weatherDay.date);
 
-  const tempCelsius = useContext(weatherContext).tempCelsius;
+  const tempCelsius = useContext(weatherContextProvider).tempCelsius;
 
   const temperature = temperatureToggle({
     tempCelsius: tempCelsius,
