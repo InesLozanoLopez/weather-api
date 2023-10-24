@@ -4,13 +4,16 @@ import { IWeatherDay } from '@/interfaces'
 import FutureDay from '@/components/futureDay'
 
 export default function WeatherFuture() {
-    const weatherContextData = useContext(weatherContext);
+    const weatherContextData= useContext(weatherContext);
     const weatherData = weatherContextData.weatherData;
+
 
     if(!weatherData){
         return null
     }
+
     const weatherForecast = weatherData.forecast.forecastday;
+
 
     return (
         <>

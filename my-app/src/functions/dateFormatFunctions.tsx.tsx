@@ -1,9 +1,9 @@
 export function formatDate(data: string): string {
   if(!data){return '';}
-    const timeSplit = data.split(' ');
-    const dateSplit = timeSplit[0].split('-');
-    const day = parseInt(dateSplit[2]);
-    const month = parseInt(dateSplit[1]);
+
+  const date = new Date (data)
+  const day = date.getDate();
+  const month = date.getMonth();
   
     function dayLetter(day: number): string {
       if (day === 1 || day === 21 || day === 31) {
@@ -34,7 +34,18 @@ export function formatDate(data: string): string {
     return `${dayLetter(day)} ${monthLetter[month]}`;
   }
 
-export function celciusToFahrenheit(celcius: number): number {
-    const fahrenheit = (celcius * 9/5) + 32;
-    return fahrenheit;
+export function formatDayOfWeek(data: string) : string {
+  if(!data){
+    return '';
+  }
+
+  const day = new Date (data);
+
+  const dayNames = [
+    'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
+  ];
+
+  const dayOfWeek = dayNames[day.getDay()]
+
+  return dayOfWeek
 }

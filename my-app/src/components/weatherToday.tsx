@@ -1,29 +1,29 @@
 import { weatherContext } from "@/context";
 import { useContext } from "react";
 import Image from "next/image";
-import { formatDate, celciusToFahrenheit } from "@/functions";
+import { formatDayOfWeek } from "@/functions/dateFormatFunctions.tsx";
+import { temperatureToggle } from "@/functions/temperatureFunctions";
+
 
 export default function WeatherToday() {
-    const weatherContextData = useContext(weatherContext);
-    const weatherData = weatherContextData.weatherData;
+    const weatherData = useContext(weatherContext).weatherData;
     const { tempCelsius, temperatureUnits } = useContext(weatherContext);
 
-    if(!weatherData){
+    if (!weatherData) {
         return null
     }
 
     const weatherToday = weatherData.forecast.forecastday[0];
-    const date = formatDate(weatherToday.date)
+    const date = formatDayOfWeek(weatherToday.date)
 
 
     const handleOnClick = () => {
         temperatureUnits(tempCelsius)
     }
 
-    const temperature = tempCelsius ?
-        weatherToday.day.avgtemp_c :
-        celciusToFahrenheit(weatherToday.day.avgtemp_c);
-    
+    const temperature = temperatureToggle({ tempCelsius: tempCelsius, temperature: weatherToday.day.avgtemp_c })
+
+
     console.log('weatherToday', weatherToday)
     console.log('icon', weatherToday.day.condition.icon)
 
@@ -32,6 +32,18 @@ export default function WeatherToday() {
             <div className="todayContentBox">
                 <div className='locationInfo'>
                     {`Results for: ${weatherData.location.name}, ${weatherData.location.country}`}
+                </div>
+                <div className="tempUnitsToggle">
+                    <button
+                        onClick={handleOnClick}
+                        className={tempCelsius ? 'lightColor' : ''}>
+                        Farenheign
+                    </button>
+                    <button
+                        onClick={handleOnClick}
+                        className={!tempCelsius ? 'lightColor' : ''}>
+                        Celcius
+                    </button>
                 </div>
                 <div className="gridContent">
                     <Image
@@ -43,23 +55,21 @@ export default function WeatherToday() {
                         height={150}
                         priority={true}
                     />
-
                     <div className="weatherTemp">
-                        `Temperature: ${temperature}`
-                        <button
-                            onClick={handleOnClick}>
-                            {tempCelsius ? "F" : "C"}
-                        </button>
+                        Temperature: ${temperature} ${tempCelsius ? "F" : "C"}
                     </div>
+
+                    <span className='verticalLine'></span>
+
 
                     <div className="weatherInfo">
-                        `Precipitation: ${weatherToday.day.daily_chance_of_rain}%`
-                        `Wind Speed: ${weatherToday.day.avgvis_miles}mph/h`
-                        `Humidity: ${weatherToday.day.avghumidity}%`
+                        <div>Precipitation: ${weatherToday.day.daily_chance_of_rain}%</div>
+                        <div>Wind Speed: ${weatherToday.day.avgvis_miles}mph/h</div>
+                        <div>Humidity: ${weatherToday.day.avghumidity}%</div>
                     </div>
                     <div className="timeAndDescription">
-                        {date}
-                        {weatherToday.day.condition.text}
+                        <div>{date}</div>
+                        <div>{weatherToday.day.condition.text}</div>
                     </div>
                 </div>
             </div>

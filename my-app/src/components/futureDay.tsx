@@ -1,5 +1,7 @@
 import { IWeatherDay } from '@/interfaces'
-import { formatDate, celciusToFahrenheit } from "@/functions";
+import { formatDate } from "@/functions/dateFormatFunctions.tsx";
+import { temperatureToggle } from "@/functions/temperatureFunctions";
+
 import Image from "next/image";
 import { weatherContext } from '@/context';
 import {useContext} from 'react';
@@ -7,16 +9,15 @@ import {useContext} from 'react';
 export default function FutureDay({weatherDay}: {weatherDay: IWeatherDay}) {
     const date = formatDate(weatherDay.date);
     
-    const tempCelsius  = useContext(weatherContext);
+    const tempCelsius  = useContext(weatherContext).tempCelsius;
 
 
-    const temperature = tempCelsius ? weatherDay.day.avgtemp_c : celciusToFahrenheit(weatherDay.day.avgtemp_c);
+    const temperature = temperatureToggle({tempCelsius : tempCelsius, temperature: weatherDay.day.avgtemp_c})
 
 
 
     return (
         <>
-            (weatherDay && (
             <div className="FutureDayContentBox">
                 <div className='locationInfo'>
                     {date}
@@ -33,11 +34,10 @@ export default function FutureDay({weatherDay}: {weatherDay: IWeatherDay}) {
                     />
 
                     <div className="weatherTemp">
-                         `Temperature: ${temperature}`
+                         `Temperature: ${temperature} $ {tempCelsius ? "F" : "C"}`
                     </div>
-                    )
                 </div>
-            </div>)
+            </div>
         </>
     )
 };
