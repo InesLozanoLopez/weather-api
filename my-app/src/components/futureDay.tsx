@@ -19,7 +19,7 @@ export default function FutureDay({ weatherDay }: { weatherDay: IWeatherDay }) {
 
   return (
     <>
-      <div className="futureDayContainer">
+      <div className="futureDayContainer" tabIndex={0}>
         <div className="locationInfo">{date}</div>
         <div className="ImgContent">
           <Image

@@ -1,12 +1,13 @@
 .todayForecastContainer{
     padding: 6vw 3vw;
     color: var(--black-color);
+    white-space: nowrap;
 }
 #locationAndTempUnisContainer{
     display: flex;
     justify-content: space-around;
     gap: 10vw;
-    font-size: 3.5vw;
+    font-size: 2.5vw;
 }
 
 .tempUnitsToggle button{
@@ -22,8 +23,8 @@
     background-color: var(--orange-color);
     display: inline-block;
     vertical-align: middle;
-    width: 0.7vw;
-    height: 4vw;
+    width: 0.3vw;
+    height: 2vw;
 }
 
 
@@ -46,7 +47,8 @@
 }
 
 .weatherTemp{
-    font-size: 6vw;
+    font-size: 4vw;
+    margin: 1vw;
 }
 
 .verticalLine{
@@ -60,11 +62,13 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: space-around;   
+    margin: 1vw;
+
 }
 .weatherDetails{
     display: inline;
-    font-size: 4vw;
+    font-size: 2vw;
 }
 
 .timeAndDescription{
@@ -72,4 +76,5 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    font-size: 2vw;
 }

@@ -55,8 +55,8 @@ export default function WeatherToday() {
               src={`http:${weatherToday.day.condition.icon}`}
               aria-label={`http${weatherToday.day.condition.text} icon`}
               alt="Weather icon"
-              width={150}
-              height={150}
+              width={200}
+              height={200}
               priority={true}
             />
             <div className="weatherTemp">
