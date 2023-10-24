@@ -1,3 +1,4 @@
+import './styles/weatherFutureStyle.css';
 import { weatherContextProvider } from '@/context';
 import { useContext } from 'react';
 import { IWeatherDay } from '@/interfaces';
@@ -16,7 +17,7 @@ export default function WeatherFuture() {
   return (
     <>
       {weatherData && (
-        <div className="todayContentBox">
+        <div className="futureGridContainer">
           {weatherForecast.slice(1).map((weatherDay: IWeatherDay) => (
             <div key={weatherDay.date}>
               <FutureDay weatherDay={weatherDay} />

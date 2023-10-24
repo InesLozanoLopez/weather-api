@@ -1,0 +1,18 @@
+.searchBarContainer {
+  padding: 9vw 15vw;
+  display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.searchBar{
+    color: var(--white-color);
+    border: none;
+    border-bottom: 1vw solid var(--orange-color);
+    background-color: transparent;
+    outline: none;
+    font-size: 6vw;
+    padding-left: 20px;
+}
+.searchBar::placeholder{
+    color:#F7F7F8;
+}

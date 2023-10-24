@@ -1,0 +1,75 @@
+.todayForecastContainer{
+    padding: 6vw 3vw;
+    color: var(--black-color);
+}
+#locationAndTempUnisContainer{
+    display: flex;
+    justify-content: space-around;
+    gap: 10vw;
+    font-size: 3.5vw;
+}
+
+.tempUnitsToggle button{
+    border: none;
+    background-color: transparent;
+}
+
+.tempUnitsToggle.lightColor{
+    color: var(--light-color);
+}
+
+.verticalLine.tempUnitsToggle{
+    background-color: var(--orange-color);
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.7vw;
+    height: 4vw;
+}
+
+
+.gridContainer{
+    margin: 3vw;
+    padding: 3vw;
+    min-height: 30vw;
+    display: grid;
+    grid-template-columns: repeat(2,0.5fr) minmax(0,.1fr) repeat(1,1fr);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+    border-radius: 20%;
+}
+
+.weatherIcon{
+    align-self: center;
+    max-width: 200px;
+    min-width: 80px;
+    width: 30vw;
+    height: auto;
+}
+
+.weatherTemp{
+    font-size: 6vw;
+}
+
+.verticalLine{
+    background-color: var(--orange-color);
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.8vw;
+    height: 15vw;
+}
+.weatherInfo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.weatherDetails{
+    display: inline;
+    font-size: 4vw;
+}
+
+.timeAndDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}

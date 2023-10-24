@@ -1,3 +1,4 @@
+import './styles/futureDayStyle.css';
 import { IWeatherDay } from '@/interfaces';
 import { formatDayOfWeek } from '@/functions/dateFormatFunctions.tsx';
 import { temperatureToggle } from '@/functions/temperatureFunctions';
@@ -18,11 +19,11 @@ export default function FutureDay({ weatherDay }: { weatherDay: IWeatherDay }) {
 
   return (
     <>
-      <div className="FutureDayContentBox">
+      <div className="futureDayContainer">
         <div className="locationInfo">{date}</div>
         <div className="ImgContent">
           <Image
-            className="weatherIcon"
+            className="futureWeatherIcon"
             src={`http:${weatherDay.day.condition.icon}`}
             aria-label={`${weatherDay.day.condition.text} icon`}
             alt="Weather icon"
@@ -30,11 +31,10 @@ export default function FutureDay({ weatherDay }: { weatherDay: IWeatherDay }) {
             height={80}
             priority={true}
           />
-
-          <div className="weatherTemp">
-            `Temperature: {temperature} {tempCelsius ? 'F' : 'C'}`
-          </div>
         </div>
+          <div className="futureDayTemp">
+            {temperature} {tempCelsius ? 'ºC' : 'ºF'}
+          </div>
       </div>
     </>
   );

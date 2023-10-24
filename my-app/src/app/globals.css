@@ -1,0 +1,18 @@
+:root{
+  --white-color : #FFFFFF;
+  --black-color: #202123;
+  --orange-color: #F48335;
+  --light-color: #CCCCCC;
+}
+
+body{
+  margin: 0%;
+  width: 100vw;
+  height: auto;
+  background-color: var(--white-color);
+}
+
+header {
+  background-color: var(--black-color);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+}
