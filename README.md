@@ -3,9 +3,20 @@ Next.js app which fetch weather forecast of 5 days from www.weatherapi.com for t
 
 The app has a simple design in black and white with a little bit of orange.
 
+
 ## ScreenShots of the app
-<img src="./my-app/public/weatherForecast.png" alt="Forecast viewing" width="300" height="auto" style="border: solid black 4px"/>
-<img src="./my-app/public/homePageViewing.png" alt="Home page viewing" width="300" height="auto" style="border: solid black 4px"/>
+<table>
+  <tr>
+    <td style="border: 4px solid black; padding: 10px;" align="center" margin="4px">
+      <img src="./my-app/public/homePageViewing.png" alt="Home page viewing" width="300" height="auto"/>
+      <br>Home Page Viewing
+    </td>
+    <td style="border: 4px solid black; padding: 10px;" align="center"; margin="4px">
+      <img src="./my-app/public/weatherForecast.png" alt="Forecast viewing" width="300" height="auto"/>
+      <br>Forecast Viewing
+    </td>
+  </tr>
+</table>
 
 
 ## Testing:
