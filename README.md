@@ -4,14 +4,14 @@ Next.js app which fetch weather forecast of 5 days from www.weatherapi.com for t
 The app has a simple design in black and white with a little bit of orange.
 
 ## ScreenShots of the app
-<img src="./public/weatherForecast.png" alt="Forecast viewing" width="300" height="auto" style="border: solid black 4px"/>
-<img src="./public/homePageviewing.png" alt="Home page viewing" width="300" height="auto" style="border: solid black 4px"/>
+<img src="./my-app/public/weatherForecast.png" alt="Forecast viewing" width="300" height="auto" style="border: solid black 4px"/>
+<img src="./my-app/public/homePageviewing.png" alt="Home page viewing" width="300" height="auto" style="border: solid black 4px"/>
 
 
 ## Testing:
 
 - **Lighthouse Test**: The app has been tested with Lighthouse to optimize its performance.
-<img src="./public/lightHouseTest.png" alt="Forecast viewing" width="300" height="auto" style="border: solid black 4px"/>
+<img src="./my-app/public/lightHouseTest.png" alt="Forecast viewing" width="300" height="auto" style="border: solid black 4px"/>
 
 - **Axe DevTools**: Accessibility testing has been performed using Axe DevTools.
 
