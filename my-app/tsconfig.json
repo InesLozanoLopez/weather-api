@@ -13,13 +13,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "types": ["jest", "node"],
+    "types": ["jest", "node", "cypress"],
     "incremental": true,
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
+      "@/cypress/*": ["/cypress/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts", "mock.data.tsx"],

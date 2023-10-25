@@ -3,6 +3,8 @@ import MockAdapter from 'axios-mock-adapter';
 import { fetchWeather } from '../src/apiServices';
 import { toast } from 'react-toastify';
 import { act, waitFor } from '@testing-library/react';
+import iconImg from '../public/appIcon.png';
+
 
 jest.mock('react-toastify', () => ({
   toast: {
@@ -44,7 +46,6 @@ describe('fetchWeather function', () => {
                 avghumidity: 60,
               },
             },
-            
           ],
         },
       },
@@ -53,13 +54,13 @@ describe('fetchWeather function', () => {
     const city = 'Stirling';
     const weatherData = await fetchWeather(city);
 
-    expect(mock.history.get[0].params).toEqual({
+    expect(mock.history.get[0].params).equal({
       key: 'b8159c97c59d43d08eb203618232310',
       q: city,
       days: 5,
     });
 
-        expect(weatherData.weatherData.location.name).toEqual('Stirling');
+    expect(weatherData.weatherData.location.name).equal('Stirling');
   });
 
   it('should handle API errors', async () => {
@@ -67,11 +68,16 @@ describe('fetchWeather function', () => {
 
     const city = 'InvalidCity';
     try {
-      await fetchWeather(city);
+      await fetchWeather(city);""
     } catch (error: any) {
       await waitFor(() => {
         act(() => {
-          expect(toast.error(`Network error: ${error.message}`));
+          if (error.status === 400) {
+            expect(toast.error(
+              `Check the spelling of the city ${iconImg}`));
+          } else {
+            expect(toast.error(`Network error: ${error.message}`));
+          }
         });
       })
     }

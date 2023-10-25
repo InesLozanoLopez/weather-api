@@ -1,7 +1,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import WeatherToday from './../src/components/weatherToday';
-import { weatherContextProvider } from './../src/context';
-import { mockContextProvider } from './../mock.data';
+import WeatherToday from '../src/components/weatherToday';
+import { weatherContextProvider } from '../src/context';
+import { mockContextProvider } from '../mock.data';
 
 describe('WeatherToday component', () => {
   it('renders correctly', () => {

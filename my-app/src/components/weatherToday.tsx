@@ -35,6 +35,7 @@ export default function WeatherToday() {
           <div className="tempUnitsToggle">
             <button
               onClick={handleOnClick}
+              aria-label='Change units to Fahrenheit'
               className={tempCelsius ? 'tempUnitsToggle lightColor' : 'tempUnitsToggle'}
             >
               Fahrenheit
@@ -42,6 +43,7 @@ export default function WeatherToday() {
             <span className="verticalLine tempUnitsToggle"></span>
             <button
               onClick={handleOnClick}
+              aria-label='Change units to Celsius'
               className={!tempCelsius ? 'tempUnitsToggle lightColor' : 'tempUnitsToggle'}
             >
               Celcius
