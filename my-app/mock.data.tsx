@@ -43,4 +43,4 @@ const contextValue = {
     updateWeatherData: jest.fn(),
   };
 
-  export { mockContextProvider, mockWeatherDay}
+  export { mockContextProvider, mockWeatherDay, contextValue}
