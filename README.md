@@ -8,11 +8,11 @@ The app has a simple design in black and white with a little bit of orange.
 <table>
   <tr>
     <td style="border: 4px solid black; padding: 10px;" align="center" margin="4px">
-      <img src="./my-app/public/homePageViewing.png" alt="Home page viewing" width="300" height="auto"/>
+      <img src="./my-app/public/homePageViewing.png" alt="Home page viewing" width="auto" height="300"/>
       <br>Home Page Viewing
     </td>
     <td style="border: 4px solid black; padding: 10px;" align="center"; margin="4px">
-      <img src="./my-app/public/weatherForecast.png" alt="Forecast viewing" width="300" height="auto"/>
+      <img src="./my-app/public/weatherForecast.png" alt="Forecast viewing" width="auto" height="300"/>
       <br>Forecast Viewing
     </td>
   </tr>
