@@ -22,7 +22,9 @@ The app has a simple design in black and white with a little bit of orange.
 ## Testing:
 
 - **Lighthouse Test**: The app has been tested with Lighthouse to optimize its performance.
-<img src="./my-app/public/lightHouseTest.png" alt="Forecast viewing" width="300" height="auto" style="border: solid black 4px"/>
+<div style='margin="4px">
+<img src="./my-app/public/lightHouseTest.png" alt="Forecast viewing" width="auto" height="300" />
+</div>
 
 - **Axe DevTools**: Accessibility testing has been performed using Axe DevTools.
 
