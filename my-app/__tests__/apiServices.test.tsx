@@ -5,13 +5,11 @@ import { toast } from 'react-toastify';
 import { act, waitFor } from '@testing-library/react';
 import iconImg from '../public/appIcon.png';
 
-
 jest.mock('react-toastify', () => ({
   toast: {
     error: jest.fn(),
   },
 }));
-
 
 describe('fetchWeather function', () => {
   let mock: MockAdapter;
@@ -49,7 +47,7 @@ describe('fetchWeather function', () => {
           ],
         },
       },
-    })
+    });
 
     const city = 'Stirling';
     const weatherData = await fetchWeather(city);
@@ -68,18 +66,18 @@ describe('fetchWeather function', () => {
 
     const city = 'InvalidCity';
     try {
-      await fetchWeather(city);""
+      await fetchWeather(city);
+      ('');
     } catch (error: any) {
       await waitFor(() => {
         act(() => {
           if (error.status === 400) {
-            expect(toast.error(
-              `Check the spelling of the city ${iconImg}`));
+            expect(toast.error(`Check the spelling of the city ${iconImg}`));
           } else {
             expect(toast.error(`Network error: ${error.message}`));
           }
         });
-      })
+      });
     }
-  })
-})
+  });
+});

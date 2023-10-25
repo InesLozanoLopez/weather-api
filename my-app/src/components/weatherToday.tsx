@@ -1,4 +1,4 @@
-import './styles/weatherTodayStyle.css'
+import './styles/weatherTodayStyle.css';
 import { weatherContextProvider } from './../context';
 import { useContext } from 'react';
 import Image from 'next/image';
@@ -35,22 +35,26 @@ export default function WeatherToday() {
           <div className="tempUnitsToggle">
             <button
               onClick={handleOnClick}
-              aria-label='Change units to Fahrenheit'
-              className={tempCelsius ? 'tempUnitsToggle lightColor' : 'tempUnitsToggle'}
+              aria-label="Change units to Fahrenheit"
+              className={
+                tempCelsius ? 'tempUnitsToggle lightColor' : 'tempUnitsToggle'
+              }
             >
               Fahrenheit
             </button>
             <span className="verticalLine tempUnitsToggle"></span>
             <button
               onClick={handleOnClick}
-              aria-label='Change units to Celsius'
-              className={!tempCelsius ? 'tempUnitsToggle lightColor' : 'tempUnitsToggle'}
+              aria-label="Change units to Celsius"
+              className={
+                !tempCelsius ? 'tempUnitsToggle lightColor' : 'tempUnitsToggle'
+              }
             >
               Celcius
             </button>
           </div>
         </section>
-        <section id='weatherInfoContainer'>
+        <section id="weatherInfoContainer">
           <div className="gridContainer">
             <Image
               className="weatherIcon"
@@ -67,9 +71,11 @@ export default function WeatherToday() {
 
             <span className="verticalLine"></span>
 
-            <div className='weatherInfo'>
+            <div className="weatherInfo">
               <div className="weatherDetails">
-                <div>Precipitation: {weatherToday.day.daily_chance_of_rain}%</div>
+                <div>
+                  Precipitation: {weatherToday.day.daily_chance_of_rain}%
+                </div>
                 <div>Wind Speed: {weatherToday.day.avgvis_miles}mph</div>
                 <div>Humidity: {weatherToday.day.avghumidity}%</div>
               </div>
@@ -80,7 +86,7 @@ export default function WeatherToday() {
             </div>
           </div>
         </section>
-      </div >
+      </div>
     </>
   );
 }

@@ -9,23 +9,23 @@ describe('Weather Context', () => {
     render(
       <WeatherContext>
         <SearchBar />
-      </WeatherContext>
-    )
+      </WeatherContext>,
+    );
     expect(SearchBar).toBeDefined();
   });
 
   it('should update temperature units when the button is clicked', () => {
     render(
       <weatherContextProvider.Provider value={mockContextProvider}>
-        <WeatherToday/>
-      </weatherContextProvider.Provider>
+        <WeatherToday />
+      </weatherContextProvider.Provider>,
     );
     const toggleButton = screen.getByText('Fahrenheit');
     act(() => {
-    fireEvent.click(toggleButton);}
-    )
+      fireEvent.click(toggleButton);
+    });
 
     expect(screen.findAllByDisplayValue(/68 ºF/));
     expect(mockContextProvider.temperatureUnits).toHaveBeenCalledWith(true);
-})
-})
+  });
+});

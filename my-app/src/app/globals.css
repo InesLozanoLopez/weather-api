@@ -1,11 +1,11 @@
-:root{
-  --white-color : #FFFFFF;
+:root {
+  --white-color: #ffffff;
   --black-color: #202123;
-  --orange-color: #F48335;
+  --orange-color: #f48335;
   --light-color: #777777;
 }
 
-body{
+body {
   margin: 0%;
   width: 100vw;
   height: auto;

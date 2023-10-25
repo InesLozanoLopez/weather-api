@@ -7,12 +7,9 @@ import WeatherFuture from './../components/weatherFuture';
 import WeatherToday from './../components/weatherToday';
 import ToastProvider from './../toastProvider';
 
-
-
 export default function HomePage() {
   return (
     <>
-
       <WeatherContext>
         <header>
           <ToastProvider>

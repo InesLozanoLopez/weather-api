@@ -13,8 +13,6 @@ export default function SearchBar() {
   const { updateWeatherData } = useContext(weatherContextProvider);
   const pattern = /^[A-Za-z]+$/;
 
-
-
   const formik = useFormik({
     initialValues: {
       city: '',
@@ -26,21 +24,21 @@ export default function SearchBar() {
     }),
     onSubmit: async (values: IFormValues) => {
       if (!pattern.test(values.city)) {
-        toast.warning('Only letters allowed')
+        toast.warning('Only letters allowed');
       } else {
         const loadingToastMessage = toast.info('Loading forecast...');
         const data = await fetchWeather(values.city);
         updateWeatherData(data);
         toast.dismiss(loadingToastMessage);
       }
-    }
+    },
   });
 
   return (
-    <div className='searchBarContainer'>
-      <form onSubmit={formik.handleSubmit} >
+    <div className="searchBarContainer">
+      <form onSubmit={formik.handleSubmit}>
         <input
-          className='searchBar'
+          className="searchBar"
           type="text"
           aria-label="Insert the city to get the forecast from"
           id="city"

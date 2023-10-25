@@ -1,21 +1,21 @@
-.futureGridContainer{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 3vw;
-    padding: 2vw;
-    gap: 4vw;
-    font-size: 3vw;
-    overflow-y: hidden;
-    overflow-x: scroll;
+.futureGridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 3vw;
+  padding: 2vw;
+  gap: 4vw;
+  font-size: 3vw;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 
-.futureWeatherIcon{
-    max-width: 100px;
-    min-width: 75px;
-    width: 20vw;
-    height: auto;
+.futureWeatherIcon {
+  max-width: 100px;
+  min-width: 75px;
+  width: 20vw;
+  height: auto;
 }
 
-.futureDayTemp{
-    font-size: 4vw;
+.futureDayTemp {
+  font-size: 4vw;
 }

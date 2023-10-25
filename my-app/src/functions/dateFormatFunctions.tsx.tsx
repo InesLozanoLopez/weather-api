@@ -43,9 +43,17 @@ export function formatDayOfWeek(data: string): string {
 
   const day = new Date(data);
 
-  const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const dayNames = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
 
-  const dayOfWeek = dayNames[day.getDay()-1];
+  const dayOfWeek = dayNames[day.getDay() - 1];
 
   return dayOfWeek;
 }

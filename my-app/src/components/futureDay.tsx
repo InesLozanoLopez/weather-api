@@ -32,9 +32,9 @@ export default function FutureDay({ weatherDay }: { weatherDay: IWeatherDay }) {
             priority={true}
           />
         </div>
-          <div className="futureDayTemp">
-            {temperature} {tempCelsius ? 'ºC' : 'ºF'}
-          </div>
+        <div className="futureDayTemp">
+          {temperature} {tempCelsius ? 'ºC' : 'ºF'}
+        </div>
       </div>
     </>
   );
