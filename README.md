@@ -5,7 +5,7 @@ The app has a simple design in black and white with a little bit of orange.
 
 ## ScreenShots of the app
 <img src="./my-app/public/weatherForecast.png" alt="Forecast viewing" width="300" height="auto" style="border: solid black 4px"/>
-<img src="./my-app/public/homePageviewing.png" alt="Home page viewing" width="300" height="auto" style="border: solid black 4px"/>
+<img src="./my-app/public/homePageViewing.png" alt="Home page viewing" width="300" height="auto" style="border: solid black 4px"/>
 
 
 ## Testing:
