@@ -6,7 +6,7 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "noEmit": false,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -20,7 +20,7 @@
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
-      "@/cypress/*": ["/cypress/*"]
+      "@/cypress/*": ["cypress/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts", "mock.data.tsx"],
