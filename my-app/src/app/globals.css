@@ -5,10 +5,13 @@
   --light-color: #777777;
 }
 
-body {
-  margin: 0%;
+html, body {
   width: 100%;
   height: auto;
+}
+
+body {
+  margin: 0%;
   background-color: var(--white-color);
 }
 
